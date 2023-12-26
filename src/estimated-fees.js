@@ -1,5 +1,5 @@
 import { RPCClient } from 'rpc-bitcoin';
-import { setStatus } from './health';
+import { setStatus } from './health.js';
 
 const LESS_THAN_20MIN_HEIGHT = 2;
 const LESS_THAN_1H_HEIGHT = 5;
@@ -69,7 +69,7 @@ async function executePeriodically() {
 
       let waitTime = 0;
       if (attempts === 0) {
-        waitTime = 20 * 1000; // 20 secondsitTime;
+        waitTime = 20 * 1000; // 20 seconds;
       } else if (attempts === 1) {
         waitTime = 60 * 1000; // 1 minute
       } else if (attempts === 2) {
@@ -82,10 +82,8 @@ async function executePeriodically() {
         break;
       }
 
-      // Increment the attempts counter
       attempts++;
 
-      // Wait before attempting again
       console.log(`Retrying in ${waitTime / 1000} seconds...`);
       await new Promise((resolve) => setTimeout(resolve, waitTime));
     }

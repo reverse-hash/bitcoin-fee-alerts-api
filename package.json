@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node src/app.js",
+    "start": "node src/app.js",
     "format": "npx prettier --write ."
   },
   "dependencies": {
