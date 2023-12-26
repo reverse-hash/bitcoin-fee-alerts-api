@@ -1,1 +1,1 @@
-# bitcoin-fee-alert-server
+# Bitcoin fee alerts API
